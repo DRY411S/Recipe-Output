@@ -1,0 +1,30 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.16.2
+Date: 2018-12-18
+
+  Features:
+    - Outputs all the recipes for the game just started
+    - Outputs recipe Name, Category, Group, Subgroup, Craft Time and all recipe product and ingredient types, names and amounts
+    - Uses the '|' delimiter
+    - Outputs for the player, enemy and neutral forces
+    - First line of file contains the column types as a header
+    - Output limited to vanilla of a maximum of 3 products and 6 ingredients per recipe
+    - See https://github.com/DRY411S/Recipe-Output/blob/master/README.md for file output format
+  Changes:
+    - Now includes recipe product types and ingredient types in output
+    - Writes a message to console confirming the location of the recipe output file
+
+---------------------------------------------------------------------------------------------------
+Version: 0.16.1
+Date: 2017-12-17
+
+  Features:
+    - Outputs all the recipes for the game just started
+    - Outputs recipe Name, Category, Group, Subgroup, Craft Time and all recipe product and ingredient names and amounts
+    - Uses the '|' delimiter
+    - Outputs for the player, enemy and neutral forces
+    - First line of file contains the column types as a header
+    - Output limited to vanilla of a maximum of 3 products and 6 ingredients per recipe
+    - See https://github.com/DRY411S/Recipe-Output/blob/master/README.md for file output format
+  Changes:
+    - First version
