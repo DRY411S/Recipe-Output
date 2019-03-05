@@ -3,9 +3,27 @@ A factorio mod that dumps the recipes into a delimited file in the script-output
 
 # How it works
 
-When you start a new game
+When you start a new game the mod looks for every recipe (including any recipes in installed mods) and iterates them inorder to output all products and ingredients.
 
-The mod looks for every recipe (including any recipes in installed mods). It writes them into a recipedump.txt file
-with the following format:
+# Output
+It writes them into a recipedump.csv file with 3 "parts"
+ * 1st Basic recipe data
+ * 2nd Products (produced by the recipe) by name, type and amount
+   The first product of a recipe is always the recipe item itself unless a recipe produces something entirely different than the name suggests.
+ * 3rd Ingredients (needed by the recipe) by name, type and amount
 
-Name|Category|Group|Subgroup|Force|(Base) Craft Time|Product 1 Type|Product 1|Product 1 Amount|Product 2 Type|Product 2|Product 2 Amount|Product 3 Type|Product 3|Product 3 Amount|Product 4 Type|Product 4|Product 4 Amount|Product 5 Type|Product 5|Product 5 Amount|Product 6 Type|Product 6|Product 6 Amount|Ingredient 1 Type|Ingredient 1|Ingredient 1 Amount|Ingredient 2 Type|Ingredient 2|Ingredient 2 Amount|Ingredient 3 Type|Ingredient 3|Ingredient 3 Amount|Ingredient 4 Type|Ingredient 4|Ingredient 4 Amount|Ingredient 5 Type|Ingredient 5|Ingredient 5 Amount|Ingredient 6 Type|Ingredient 6|Ingredient 6 Amount|
+## Format csv (semicolon seperated)
+Name;Category;Group;Subgroup;Force;(Base) Craft Time;
+Product 1;Product Type 1;Product Amount 1;
+Product 2;Product Type 2;Product Amount 2;
+Product 3;Product Type 3;Product Amount 3;
+Ingredient 1;Ingredient Type 1;Ingredient Amount 1;
+Ingredient 2;Ingredient Type 2;Ingredient Amount 2;
+Ingredient 3;Ingredient Type 3;Ingredient Amount 3;
+Ingredient 4;Ingredient Type 4;Ingredient Amount 4;
+Ingredient 5;Ingredient Type 5;Ingredient Amount 5;
+Ingredient 6;Ingredient Type 6;Ingredient Amount 6
+
+## Limits
+The base game recipes has a max of 3 products and 6 ingredients, so the script is limited to outputting exactly that.
+If changes is needed (in newer versions or if using other mods), these limits needs to be changed within logrecipe and logrecipes functions in the control.lua fil.
